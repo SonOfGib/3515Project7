@@ -14,15 +14,9 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.O
         //  Determine if only one or two panes are visible
         twoPanes = (findViewById(R.id.canvasFragment) != null);
 
-        //  Load palette fragment by default
-
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.paletteFragment, new PaletteFragment()).commit();
 
-        /*
-         *  Check if details pain is visible in current layout (e.g. large or landscape)
-         *  and load fragment if true.
-         */
         if (twoPanes){
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.canvasFragment, new CanvasFragment()).commit();
@@ -34,14 +28,14 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.O
     public void onColorSelected(int color) {
 
         if(twoPanes) {
+            //In the single frag view, just update the color.
             CanvasFragment canvasFragment = (CanvasFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.canvasFragment);
             canvasFragment.updateBackgroundColor(color);
         }
         else{
-            // Otherwise, we're in the one-pane layout and must swap frags...
+            // We're in the one-pane layout and must swap frags...
 
-            // Create fragment and give it an argument for the selected article
             CanvasFragment newFragment = new CanvasFragment();
             Bundle args = new Bundle();
             args.putInt(CanvasFragment.ARG_COLOR, color);
