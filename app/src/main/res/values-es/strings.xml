@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Palette Activity v2</string>
+    <string name="color_picker">Selector de Color</string>
+    <string-array name="grid_array">
+        <item>Blanco</item>
+        <item>Rojo</item>
+        <item>Azul</item>
+        <item>Verde</item>
+        <item>Amarillo</item>
+        <item>Púrpura</item>
+        <item>Gris Oscuro</item>
+        <item>Marina de Guerra</item>
+        <item>Agua</item>
+        <item>Lima</item>
+        <item>Granate</item>
+        <item>Oliva</item>
+        <item>Plata</item>
+        <item>Cian</item>
+    </string-array>
+
+</resources>
